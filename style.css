@@ -33,10 +33,12 @@ body {
 
 header {
     background-color: var(--navbar-color);
+    border-radius: 0px 0 15px 15px;
     color: var(--navbar-text-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     position: fixed;
     width: 100%;
+    height: 105px;
     top: 0;
     z-index: 1000;
 }
@@ -89,7 +91,11 @@ nav ul li a:hover {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpeg');
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5), 
+        rgba(0,0,0,0.5)), 
+        url('https://res.cloudinary.com/dum4okaqx/image/upload/v1732220303/hero-bg_so6ksq.jpg'
+    );
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -229,6 +235,19 @@ footer .container {
 /* Estilos para la página de servicios */
 .services {
     padding: 60px 0;
+}
+/* MQ para hacer 2 columnas */
+@media(min-width: 768px) {
+    .services .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+    .services .container .service-item:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 50%;
+    }
 }
 
 .service-item {
